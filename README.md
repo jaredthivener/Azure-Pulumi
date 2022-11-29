@@ -1,1 +1,1 @@
-# Azure-Pulumi
+# Azure Pulumi
