@@ -1,39 +1,58 @@
-Azure Synapse Workspace and Pools
+[![Deploy](https://get.pulumi.com/new/button.svg)](https://app.pulumi.com/new?template=https://github.com/pulumi/examples/blob/master/azure-py-synapse/README.md)
+
+# Azure Synapse Workspace and Pools
 
 Starting point for enterprise analytics solutions based on Azure Synapse.
 
-Running the App
+## Running the App
 
-Create a new stack:
+1. Create a new stack:
 
-$ pulumi stack init dev
-Create a Python virtualenv, activate it, and install dependencies:
+    ```bash
+    $ pulumi stack init dev
+    ```
 
-This installs the dependent packages needed for our Pulumi program.
+1. Create a Python virtualenv, activate it, and install dependencies:
 
-$ python3 -m venv venv
-$ source venv/bin/activate
-$ pip3 install -r requirements.txt
+   This installs the dependent packages [needed](https://www.pulumi.com/docs/intro/concepts/how-pulumi-works/) for our Pulumi program.
 
-Login to Azure CLI (you will be prompted to do this during deployment if you forget this step):
+    ```bash
+    $ python3 -m venv venv
+    $ source venv/bin/activate
+    $ pip3 install -r requirements.txt
+    ```
+   
+1. Login to Azure CLI (you will be prompted to do this during deployment if you forget this step):
 
-$ az login
-Set the Azure region location to use:
+    ```bash
+    $ az login
+    ```
 
-$ pulumi config set azure-native:location westus2
-Set the user ID to grant access to (e.g., your current user):
+1. Set the Azure region location to use:
+    
+    ```
+    $ pulumi config set azure-native:location westus2
+    ```
 
-$ pulumi config set userObjectId $(az ad signed-in-user show --query=objectId | tr -d '"')
-Run pulumi up to preview and deploy changes:
+1. Set the user ID to grant access to (e.g., your current user):
+    
+    ```
+    $ pulumi config set userObjectId $(az ad signed-in-user show --query=objectId | tr -d '"')
+    ```
 
-$ pulumi up
-Previewing changes:
-...
+1. Run `pulumi up` to preview and deploy changes:
 
-Performing changes:
-...
-Resources:
-    + 13 created
+    ```bash
+    $ pulumi up
+    Previewing changes:
+    ...
 
-Duration: 10m53s
-Navigate to https://web.azuresynapse.net and sign in to your new workspace.
+    Performing changes:
+    ...
+    Resources:
+        + 13 created
+
+    Duration: 10m53s
+    ```
+
+1. Navigate to https://web.azuresynapse.net and sign in to your new workspace.
